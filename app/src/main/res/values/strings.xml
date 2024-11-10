@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GopoBank</string>
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_card">Card</string>
+    <string name="bottom_navigation_chat">Chat</string>
+    <string name="bottom_navigation_shop">Shop</string>
+    <string name="bottom_navigation_history">History</string>
 </resources>
