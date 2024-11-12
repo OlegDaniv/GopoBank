@@ -20,11 +20,11 @@ fun NavigationGraph(navController: NavHostController, innerPadding: PaddingValue
         navController = navController,
         startDestination = Home,
     ) {
-        composable<Home>() {
+        composable<Home> {
             HomeScreen()
         }
 
-        composable<Card>() {
+        composable<Card> {
             CardScreen()
         }
     }

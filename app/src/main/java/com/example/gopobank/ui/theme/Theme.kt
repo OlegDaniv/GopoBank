@@ -1,6 +1,5 @@
 package com.example.gopobank.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -9,7 +8,11 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -33,10 +36,45 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+@Immutable
+data class CustomTypography(
+    val body: TextStyle,
+    val title: TextStyle
+)
+
+val LocalCustomColors = staticCompositionLocalOf {
+    CustomColors(
+        content = Color.Unspecified,
+        component = Color.Unspecified,
+    )
+}
+val LocalCustomTypography = staticCompositionLocalOf {
+    CustomTypography(
+        body = TextStyle.Default,
+        title = TextStyle.Default
+    )
+}
+
+val LocalCustomDimensions = staticCompositionLocalOf { Dimensions() }
+
+object CustomTheme {
+    val colors: CustomColors
+        @Composable
+        get() = LocalCustomColors.current
+
+    val typography: CustomTypography
+        @Composable
+        get() = LocalCustomTypography.current
+
+    val dimensions: Dimensions
+        @Composable
+        get() = LocalCustomDimensions.current
+}
+
+
 @Composable
 fun GopoBankTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {

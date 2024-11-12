@@ -1,6 +1,15 @@
 package com.example.gopobank.ui.theme
 
+import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
+
+
+@Immutable
+data class CustomColors(
+    val content: Color,
+    val component: Color,
+)
+
 
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)

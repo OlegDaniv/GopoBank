@@ -1,22 +1,20 @@
 package com.example.gopobank.ui.screens
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import com.example.gopobank.ui.theme.CustomTheme
+import com.example.gopobank.ui.toolbar.HomeBanner
+import com.example.gopobank.ui.view.BalanceBanner
 
-
-// TODO("will be written at the next commits")
 @Composable
 fun HomeScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Blue)
-    ) {
-        Text(text = "FirstScreen")
+    Column(modifier = Modifier.fillMaxSize()) {
+        Spacer(Modifier.height(CustomTheme.dimensions.paddingXL))
+        HomeBanner()
+        BalanceBanner()
     }
 }

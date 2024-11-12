@@ -6,10 +6,8 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -63,7 +61,6 @@ sealed class BottomNavItem(var title: Int, var icon: Int) {
         title = R.string.bottom_navigation_card,
         icon = R.drawable.ic_card
     )
-
 //    data object Chat : BottomNavItem(R.string.bottom_navigation_chat, R.drawable.ic_chat)
 //    data object Shop : BottomNavItem(R.string.bottom_navigation_shop, R.drawable.ic_shop)
 //    data object History : BottomNavItem(R.string.bottom_navigation_history, R.drawable.ic_history)
